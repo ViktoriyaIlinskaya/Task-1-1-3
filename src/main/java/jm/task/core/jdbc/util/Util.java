@@ -10,15 +10,15 @@ public class Util {
     public static final String PASSWORD = "postgres";
 
     public static Connection getConnectionDataBase() {
-        Connection con = null;
+        Connection connection = null;
         try {
-            con = DriverManager.getConnection(URL, LOGIN, PASSWORD);
-            if (con != null) {
+            connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
+            if (connection != null) {
                 System.out.println("База данных подключена");
             }
         } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
         }
-        return con;
+        return connection;
         }
     }
